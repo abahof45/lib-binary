@@ -1,0 +1,52 @@
+# Control flow examples in lib-binary
+# Shows if statements, loops, and functions
+
+func fibonacci(n):
+    if n <= 1:
+        return n
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+func factorial(n):
+    result = 1
+    i = 1
+    while i <= n:
+        result = result * i
+        i = i + 1
+    return result
+
+func main():
+    print("=== Control Flow Demo ===")
+    
+    # Test if statement
+    x = 15
+    if x > 10:
+        print(x, "is greater than 10")
+    else:
+        print(x, "is not greater than 10")
+    
+    # Test while loop
+    print("\nCounting down:")
+    count = 5
+    while count > 0:
+        print(count)
+        count = count - 1
+    print("Blast off!")
+    
+    # Test for loop
+    print("\nFor loop with range:")
+    for i in range(0, 5):
+        print("i =", i)
+    
+    # Test function calls
+    print("\nFibonacci sequence:")
+    for i in range(0, 10):
+        fib = fibonacci(i)
+        print("fib(", i, ") =", fib)
+    
+    print("\nFactorials:")
+    for i in range(1, 6):
+        fact = factorial(i)
+        print(i, "! =", fact)
+    
+    return 0

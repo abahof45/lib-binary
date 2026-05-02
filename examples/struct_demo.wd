@@ -1,0 +1,43 @@
+# Struct usage demo in lib-binary
+# Shows how to define and use custom data structures
+
+struct Point:
+    x: int
+    y: int
+
+struct Person:
+    name: str
+    age: int
+
+func distance(p1, p2):
+    dx = p2.x - p1.x
+    dy = p2.y - p1.y
+    return (dx * dx + dy * dy) ** 0.5
+
+func main():
+    print("=== Struct Demo ===")
+    
+    # Create points
+    p1 = Point()
+    p1.x = 0
+    p1.y = 0
+    
+    p2 = Point()
+    p2.x = 3
+    p2.y = 4
+    
+    print("Point 1: (", p1.x, ",", p1.y, ")")
+    print("Point 2: (", p2.x, ",", p2.y, ")")
+    
+    # Calculate distance
+    dist = distance(p1, p2)
+    print("Distance:", dist)
+    
+    # Create person
+    person = Person()
+    person.name = "Alice"
+    person.age = 30
+    
+    print("Person:", person.name, "Age:", person.age)
+    
+    return dist

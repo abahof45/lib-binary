@@ -1,0 +1,14 @@
+# Hello World in lib-binary
+# Basic example showing Python-like syntax
+
+func main():
+    print("Hello, World!")
+    print("Welcome to lib-binary!")
+    
+    # Basic arithmetic
+    x = 10
+    y = 20
+    result = x + y
+    print("10 + 20 =", result)
+    
+    return result

@@ -1,0 +1,57 @@
+# Low-level operations demo in lib-binary
+# Shows C-style memory operations and bitwise operators
+
+func main():
+    print("=== Low-level Operations Demo ===")
+    
+    # High-level variables
+    x = 42
+    y = 100
+    print("x =", x)
+    print("y =", y)
+    
+    # Bitwise operations
+    and_result = x & y
+    or_result = x | y
+    xor_result = x ^ y
+    
+    print("Bitwise AND (42 & 100) =", and_result)
+    print("Bitwise OR (42 | 100) =", or_result)
+    print("Bitwise XOR (42 ^ 100) =", xor_result)
+    
+    # Shift operations
+    left_shift = x << 2
+    right_shift = y >> 2
+    
+    print("Left shift (42 << 2) =", left_shift)
+    print("Right shift (100 >> 2) =", right_shift)
+    
+    low:
+        # Low-level memory operations
+        ptr buffer = alloc(10)  # Allocate 10 bytes
+        print("Allocated buffer at address:", buffer)
+        
+        # Store some values
+        store(buffer, 65)      # Store 'A' (ASCII 65)
+        store(buffer + 1, 66)  # Store 'B' (ASCII 66)
+        store(buffer + 2, 67)  # Store 'C' (ASCII 67)
+        
+        # Read back values
+        val1 = load(buffer)
+        val2 = load(buffer + 1)
+        val3 = load(buffer + 2)
+        
+        print("Read values:", val1, val2, val3)
+        
+        # Convert to characters
+        char1 = cast_str(val1)
+        char2 = cast_str(val2)
+        char3 = cast_str(val3)
+        
+        print("As characters:", char1, char2, char3)
+        
+        # Free memory
+        free(buffer)
+        print("Memory freed")
+    
+    return and_result + or_result
